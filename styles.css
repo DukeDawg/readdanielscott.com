@@ -278,22 +278,22 @@ h3 {
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  width: 45%;
-  min-width: 170px;
-  height: 255px;
+  justify-content: flex-start;
+  width: 42%;
+  min-width: 168px;
+  height: 232px;
   padding: 1rem;
   border: 1px solid rgba(245,235,220,.3);
   box-shadow: 0 25px 55px rgba(0,0,0,.58);
   font-family: var(--display);
   text-transform: uppercase;
 }
-.mini-cover span { color: rgba(245,235,220,.72); font-size: 1rem; }
-.mini-cover strong { font-size: 2rem; line-height: .92; }
-.cover-hcu { left: 3%; top: 0; background: linear-gradient(150deg, #211613, #6d110e); transform: rotate(-8deg); }
-.cover-mind { right: 4%; top: 40px; background: linear-gradient(150deg, #171116, #46304d); transform: rotate(6deg); }
-.cover-man { left: 13%; bottom: 15px; background: linear-gradient(150deg, #111d23, #213e46); transform: rotate(5deg); }
-.cover-dark { right: 9%; bottom: 0; background: linear-gradient(150deg, #0c2019, #442717); transform: rotate(-5deg); }
+.mini-cover span { color: rgba(245,235,220,.72); font-size: .95rem; }
+.mini-cover strong { font-size: clamp(1.45rem, 3vw, 1.9rem); line-height: .92; }
+.cover-hcu { left: 4%; top: 0; z-index: 1; background: linear-gradient(150deg, #211613, #6d110e); transform: rotate(-5deg); }
+.cover-mind { right: 4%; top: 34px; z-index: 2; background: linear-gradient(150deg, #171116, #46304d); transform: rotate(5deg); }
+.cover-man { left: 10%; bottom: 42px; z-index: 3; background: linear-gradient(150deg, #111d23, #213e46); transform: rotate(4deg); }
+.cover-dark { right: 8%; bottom: 8px; z-index: 4; background: linear-gradient(150deg, #0c2019, #442717); transform: rotate(-4deg); }
 .hero-dossier blockquote {
   position: relative;
   z-index: 2;
@@ -613,7 +613,7 @@ details p { margin: .9rem 0 0; color: var(--muted); line-height: 1.5; }
   .path-grid, .series-panel-grid, .book-list.two-column, .shelf-grid, .faq-grid { grid-template-columns: 1fr; }
   .path-card { min-height: auto; }
   .hero-dossier { min-height: 470px; transform: none; }
-  .mini-cover { min-width: 145px; height: 218px; }
+  .mini-cover { min-width: 145px; height: 202px; }
   .site-footer { flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) {
