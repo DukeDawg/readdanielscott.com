@@ -250,7 +250,7 @@ h3 {
     linear-gradient(145deg, rgba(245,235,220,.1), transparent 34%),
     rgba(17,16,13,.78);
   box-shadow: var(--shadow);
-  transform: rotate(1.2deg);
+  transform: none;
 }
 .hero-dossier::before {
   content: "";
