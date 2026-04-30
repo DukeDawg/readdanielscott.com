@@ -25,12 +25,12 @@ for filename, text in [('index.html', index), ('styles.css', css), ('script.js',
 
 hrefs = re.findall(r'href="([^"]+)"', index)
 local_hrefs = [href for href in hrefs if not (href.startswith('http') or href.startswith('#'))]
-missing_files = [href for href in local_hrefs if not (root / href).exists()]
+missing_files = [href for href in local_hrefs if not (root / href.split('?', 1)[0]).exists()]
 if missing_files:
     raise SystemExit(f'Missing local href targets: {missing_files}')
 
 scripts = re.findall(r'src="([^"]+)"', index)
-missing_scripts = [src for src in scripts if not (root / src).exists()]
+missing_scripts = [src for src in scripts if not (root / src.split('?', 1)[0]).exists()]
 if missing_scripts:
     raise SystemExit(f'Missing scripts: {missing_scripts}')
 
