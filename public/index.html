@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,700;1,500&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=straight-dossier" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,6 +47,7 @@
       <a href="#series">Series</a>
       <a href="#bookshelf">Bookshelf</a>
       <a href="#about">About</a>
+      <a href="#contact">Contact</a>
       <a class="nav-cta" href="https://www.amazon.com/Daniel-Scott/e/B0B6QCQ8RV" target="_blank" rel="noreferrer">Amazon</a>
     </nav>
   </header>
@@ -283,6 +285,40 @@
         </label>
         <button type="submit">Join the list</button>
         <p class="form-note" data-form-note>Placeholder form. Next step is wiring this to the real email provider/list.</p>
+      </form>
+    </section>
+
+    <section id="contact" class="letters section-shell" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">Reader contact</p>
+        <h2 id="contact-title">Send Daniel a case file.</h2>
+        <p>Reader mail, book questions, unsettling theories about the dead being terrible communicators — send them here.</p>
+      </div>
+      <form class="signup-form" data-contact-form>
+        <input type="hidden" name="brand" value="Daniel Scott" />
+        <label class="form-trap" aria-hidden="true" tabindex="-1">
+          <span>Company</span>
+          <input type="text" name="company" autocomplete="off" tabindex="-1" />
+        </label>
+        <label>
+          <span>Your name</span>
+          <input type="text" name="name" autocomplete="name" placeholder="Clarice Starling" required />
+        </label>
+        <label>
+          <span>Your email</span>
+          <input type="email" name="email" autocomplete="email" placeholder="reader@example.com" required />
+        </label>
+        <label>
+          <span>Subject</span>
+          <input type="text" name="subject" value="Reader message for Daniel Scott" />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="6" placeholder="Tell Daniel what you want him to know." required></textarea>
+        </label>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADIngANwPi5OxMzb"></div>
+        <button type="submit">Send message</button>
+        <p class="form-note" data-contact-status role="status">Protected by Cloudflare Turnstile.</p>
       </form>
     </section>
 

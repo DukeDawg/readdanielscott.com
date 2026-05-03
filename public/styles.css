@@ -633,3 +633,33 @@ details p { margin: .9rem 0 0; color: var(--muted); line-height: 1.5; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+
+.signup-form textarea {
+  width: 100%;
+  min-height: 9rem;
+  padding: 1rem;
+  border: 1px solid rgba(216,196,164,.28);
+  border-radius: 0;
+  background: rgba(8,7,6,.72);
+  color: var(--ink);
+  font: inherit;
+  resize: vertical;
+}
+
+.form-trap {
+  position: absolute;
+  left: -100vw;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.signup-form button[disabled] {
+  cursor: wait;
+  opacity: .68;
+}
+
+.cf-turnstile {
+  min-height: 65px;
+}
