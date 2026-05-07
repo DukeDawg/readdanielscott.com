@@ -689,3 +689,95 @@ details p { margin: .9rem 0 0; color: var(--muted); line-height: 1.5; }
 .cf-turnstile {
   min-height: 65px;
 }
+
+.proof-rating {
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+}
+.rating-callout {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .9rem;
+  padding: .95rem 1.4rem;
+  border: 1px solid var(--line-hot);
+  background: rgba(22,18,15,.6);
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--display);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .95rem;
+  transition: background .2s ease, transform .2s ease;
+}
+.rating-callout:hover { background: rgba(142,23,20,.16); transform: translateY(-2px); }
+.rating-mark { color: var(--blood-hot); }
+.rating-sep { color: var(--muted); }
+.rating-count { color: var(--bone); }
+
+.quote-band {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+.quote-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.quote-grid li {
+  padding: 1.5rem 1.4rem;
+  border-left: 2px solid var(--blood-hot);
+  background: rgba(22,18,15,.6);
+}
+.quote-grid blockquote {
+  margin: 0 0 1rem;
+  color: var(--ink);
+  font-family: "Crimson Pro", Georgia, serif;
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.45;
+}
+.quote-grid cite {
+  color: var(--muted);
+  font-family: var(--display);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  font-style: normal;
+}
+
+.follow-band {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+}
+.follow-band p { color: var(--muted); margin-top: .75rem; }
+.follow-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.follow-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0 1.35rem;
+  border: 1px solid var(--line);
+  background: rgba(245,235,220,.04);
+  color: var(--ink);
+  font-family: var(--display);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.follow-button:hover { transform: translateY(-2px); border-color: var(--blood-hot); }
+
+@media (max-width: 760px) {
+  .quote-grid { grid-template-columns: 1fr; }
+  .follow-band { grid-template-columns: 1fr; }
+}
