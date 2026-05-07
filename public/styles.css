@@ -535,7 +535,7 @@ h3 {
 
 .about {
   display: grid;
-  grid-template-columns: minmax(260px, .45fr) minmax(0, .9fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
