@@ -19,6 +19,22 @@ missing = [term for term in required_terms if term not in index]
 if missing:
     raise SystemExit(f'Missing required terms: {missing}')
 
+signup_terms = [
+    'data-mailerlite-form',
+    'data-mailerlite-status',
+    'script.js?v=mailerlite-direct',
+    'styles.css?v=mailerlite-direct',
+    '187756443655472148',
+    'mlb2-41418069',
+    'ml_webform_success_41418069',
+    'mailerLiteForm.addEventListener',
+    'fetch(mailerLiteForm.action',
+]
+signup_sources = index + '\n' + js
+missing_signup_terms = [term for term in signup_terms if term not in signup_sources]
+if missing_signup_terms:
+    raise SystemExit(f'Missing signup wiring terms: {missing_signup_terms}')
+
 for filename, text in [('index.html', index), ('styles.css', css), ('script.js', js)]:
     if not text.strip():
         raise SystemExit(f'{filename} is empty')

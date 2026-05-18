@@ -36,14 +36,14 @@ The page includes Amazon purchase/follow links, SEO title/description/canonical 
 
 ## Reader signup wiring
 
-The reader-list signup form uses MailerLite's embedded webform endpoint:
+The reader-list signup form posts directly to MailerLite's embedded webform endpoint:
 
 - Form container: `mlb2-41418069`
 - Account path: `2307208`
 - Form ID: `187756443655472148`
 - Action: `https://assets.mailerlite.com/jsonp/2307208/forms/187756443655472148/subscribe`
 
-The public form intentionally keeps only the email field and MailerLite's required hidden fields: `ml-submit=1` and `anticsrf=true`. The page loads MailerLite's `webforms.min.js` script and defines `ml_webform_success_41418069()` locally so the success state can use the site's own styling instead of MailerLite's bulky default embed CSS.
+The public form intentionally keeps only the email field and MailerLite's required hidden fields: `ml-submit=1` and `anticsrf=true`. The site's own `script.js` submits the form with `fetch()`, displays MailerLite validation errors inline, and calls `ml_webform_success_41418069()` on success so the success state can use the site's own styling instead of MailerLite's bulky default embed CSS.
 
 ## Contact form wiring
 

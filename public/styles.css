@@ -615,6 +615,7 @@ h3 {
   cursor: pointer;
 }
 .form-note { margin: 0; color: var(--dim) !important; font-size: .95rem !important; }
+.form-note.is-error { color: #ffb3a7 !important; }
 .mailerlite-signup { width: 100%; }
 .ml-form-successBody[hidden] { display: none; }
 .ml-form-successBody h3 {
