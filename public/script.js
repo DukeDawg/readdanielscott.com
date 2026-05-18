@@ -1,7 +1,5 @@
 const header = document.querySelector('[data-scroll-header]');
 const year = document.querySelector('[data-year]');
-const signupForm = document.querySelector('[data-signup-form]');
-const signupNote = document.querySelector('[data-form-note]');
 const contactForm = document.querySelector('[data-contact-form]');
 
 if (year) year.textContent = new Date().getFullYear();
@@ -13,13 +11,6 @@ const setHeader = () => {
 
 setHeader();
 window.addEventListener('scroll', setHeader, { passive: true });
-
-if (signupForm && signupNote) {
-  signupForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    signupNote.textContent = 'Signup plumbing is not connected yet. The front door exists; the haunted mailbox comes next.';
-  });
-}
 
 if (contactForm) {
   const status = contactForm.querySelector('[data-contact-status]');

@@ -34,6 +34,17 @@ The page includes Amazon purchase/follow links, SEO title/description/canonical 
 - Add analytics/Search Console verification once Cloudflare is live.
 
 
+## Reader signup wiring
+
+The reader-list signup form uses MailerLite's embedded webform endpoint:
+
+- Form container: `mlb2-41418069`
+- Account path: `2307208`
+- Form ID: `187756443655472148`
+- Action: `https://assets.mailerlite.com/jsonp/2307208/forms/187756443655472148/subscribe`
+
+The public form intentionally keeps only the email field and MailerLite's required hidden fields: `ml-submit=1` and `anticsrf=true`. The page loads MailerLite's `webforms.min.js` script and defines `ml_webform_success_41418069()` locally so the success state can use the site's own styling instead of MailerLite's bulky default embed CSS.
+
 ## Contact form wiring
 
 The reader contact form posts to the Cloudflare Pages Function at `/api/contact`.

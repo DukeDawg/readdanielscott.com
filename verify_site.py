@@ -30,7 +30,8 @@ if missing_files:
     raise SystemExit(f'Missing local href targets: {missing_files}')
 
 scripts = re.findall(r'src="([^"]+)"', index)
-missing_scripts = [src for src in scripts if not (root / src.split('?', 1)[0]).exists()]
+local_scripts = [src for src in scripts if not src.startswith(('http://', 'https://', '//'))]
+missing_scripts = [src for src in local_scripts if not (root / src.split('?', 1)[0]).exists()]
 if missing_scripts:
     raise SystemExit(f'Missing scripts: {missing_scripts}')
 
