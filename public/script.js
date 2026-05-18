@@ -1,7 +1,7 @@
 const header = document.querySelector('[data-scroll-header]');
 const year = document.querySelector('[data-year]');
 const contactForm = document.querySelector('[data-contact-form]');
-const mailerLiteForm = document.querySelector('[data-mailerlite-form]');
+const mailerLiteForms = document.querySelectorAll('[data-mailerlite-form]');
 
 if (year) year.textContent = new Date().getFullYear();
 
@@ -41,9 +41,21 @@ if (contactForm) {
   });
 }
 
-if (mailerLiteForm) {
+const showMailerLiteSuccess = (form) => {
+  const container = form.closest('.ml-subscribe-form') || form.parentElement;
+  if (!container) return;
+
+  const success = container.querySelector('.row-success');
+  const rowForm = container.querySelector('.row-form');
+
+  if (success) success.hidden = false;
+  if (rowForm) rowForm.hidden = true;
+};
+
+mailerLiteForms.forEach((mailerLiteForm) => {
   const status = mailerLiteForm.querySelector('[data-mailerlite-status]');
   const button = mailerLiteForm.querySelector('button[type="submit"]');
+  const successHandler = mailerLiteForm.dataset.mailerliteSuccess;
 
   mailerLiteForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -65,8 +77,10 @@ if (mailerLiteForm) {
 
       if (result.success) {
         mailerLiteForm.reset();
-        if (typeof window.ml_webform_success_41418069 === 'function') {
-          window.ml_webform_success_41418069();
+        if (successHandler && typeof window[successHandler] === 'function') {
+          window[successHandler]();
+        } else {
+          showMailerLiteSuccess(mailerLiteForm);
         }
         return;
       }
@@ -85,4 +99,4 @@ if (mailerLiteForm) {
       if (button) button.disabled = false;
     }
   });
-}
+});

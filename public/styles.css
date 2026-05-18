@@ -625,6 +625,63 @@ h3 {
 }
 .ml-form-successBody p { margin: 0; }
 
+.backmatter-page {
+  min-height: 100vh;
+}
+.compact-header {
+  position: relative;
+}
+.reader-landing {
+  min-height: calc(100vh - 10rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding: clamp(4rem, 8vw, 8rem) 0;
+}
+.reader-landing-copy h1 {
+  max-width: 12ch;
+  font-size: clamp(4rem, 10vw, 8.2rem);
+}
+.reader-footnote {
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 1.12rem;
+  line-height: 1.5;
+}
+.reader-landing-card {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid var(--line-hot);
+  background:
+    linear-gradient(145deg, rgba(142,23,20,.22), transparent 38%),
+    rgba(17,16,13,.84);
+  box-shadow: var(--shadow);
+}
+.reader-landing-card::before {
+  content: "";
+  position: absolute;
+  inset: .7rem;
+  border: 1px solid rgba(216,196,164,.16);
+  pointer-events: none;
+}
+.reader-landing-card .signup-form {
+  position: relative;
+  z-index: 2;
+  margin-top: 1.25rem;
+  background: rgba(8,7,6,.78);
+}
+.case-tab {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding: .45rem .65rem;
+  background: var(--blood);
+  font-family: var(--display);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -656,7 +713,7 @@ details p { margin: .9rem 0 0; color: var(--muted); line-height: 1.5; }
 .site-footer p { margin: 0; }
 
 @media (max-width: 1040px) {
-  .hero, .flagship, .about, .letters, .split-heading { grid-template-columns: 1fr; }
+  .hero, .flagship, .about, .letters, .split-heading, .reader-landing { grid-template-columns: 1fr; }
   .path-grid, .series-panel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shelf-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .hero-dossier { min-height: 0; }
