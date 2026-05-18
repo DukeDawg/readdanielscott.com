@@ -222,6 +222,11 @@ h3 {
   background: linear-gradient(135deg, var(--blood), #5f0f0d);
   box-shadow: 0 18px 55px rgba(142,23,20,.34);
 }
+.button-secondary {
+  border-color: rgba(242, 138, 46, .72);
+  background: rgba(242, 138, 46, .13);
+  color: var(--ink);
+}
 .button-ghost { background: rgba(245,235,220,.04); }
 .proof-strip {
   display: flex;
