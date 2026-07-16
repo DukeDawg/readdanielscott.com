@@ -17,20 +17,20 @@ Official Daniel Scott author site. Static-first build for Cloudflare Pages, desi
 
 ## Current homepage content
 
-The homepage is organized around four reader entry lanes:
+The redesigned homepage is organized around three reader decisions: what is new, where to start, and how deep to go. It preserves the noir case-file identity while putting the newest release, the strongest series opener, the complete HCU boxed set, and the reader-list conversion path above the full catalog.
 
-1. **Heinous Crimes Unit** — 9-book FBI procedural / serial-killer series plus Books 1–8 boxed set.
+The four reader entry lanes are:
+
+1. **Heinous Crimes Unit** — 9-book FBI procedural / serial-killer series plus complete Books 1–9 boxed set.
 2. **A Murderous Mind** — 3-book psychological thriller trilogy.
 3. **A Desperate Man** — 3-book FBI manhunt trilogy.
-4. **Dark Pursuits** — 3-book supernatural thriller trilogy.
+4. **Dark Pursuits** — 4-book supernatural thriller series, now including *A Friend in Debt*.
 
-The page includes Amazon purchase/follow links, SEO title/description/canonical metadata, Open Graph/Twitter metadata, schema.org `Person` JSON-LD, a placeholder reader-list form, reader FAQ, and a mobile-first static design.
+The page includes Amazon purchase/follow links, verified current catalog counts, full reading orders, the new 1–9 HCU boxed set, MailerLite reader signup, working contact form, SEO/canonical metadata, a bespoke Open Graph card, schema.org Person JSON-LD, and responsive mobile navigation.
 
 ## Next wiring tasks
 
 - Connect GitHub repo to Cloudflare Pages and attach `readdanielscott.com` / `www.readdanielscott.com`.
-- Replace the placeholder signup form with the real email provider/list.
-- Add real cover/social-card assets when ready.
 - Add analytics/Search Console verification once Cloudflare is live.
 
 

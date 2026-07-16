@@ -2,6 +2,8 @@ const header = document.querySelector('[data-scroll-header]');
 const year = document.querySelector('[data-year]');
 const contactForm = document.querySelector('[data-contact-form]');
 const mailerLiteForms = document.querySelectorAll('[data-mailerlite-form]');
+const menuToggle = document.querySelector('[data-menu-toggle]');
+const siteNav = document.querySelector('[data-site-nav]');
 
 if (year) year.textContent = new Date().getFullYear();
 
@@ -12,6 +14,28 @@ const setHeader = () => {
 
 setHeader();
 window.addEventListener('scroll', setHeader, { passive: true });
+
+const closeMenu = () => {
+  if (!menuToggle) return;
+  document.body.classList.remove('nav-open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+};
+
+if (menuToggle && siteNav) {
+  menuToggle.addEventListener('click', () => {
+    const nextOpen = !document.body.classList.contains('nav-open');
+    document.body.classList.toggle('nav-open', nextOpen);
+    menuToggle.setAttribute('aria-expanded', String(nextOpen));
+  });
+
+  siteNav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) closeMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+}
 
 if (contactForm) {
   const status = contactForm.querySelector('[data-contact-status]');

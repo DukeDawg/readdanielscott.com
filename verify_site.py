@@ -13,7 +13,9 @@ required_terms = [
     'The General’s Weapons', 'The Animal’s Hunt', 'The Titan’s Empire', 'The Poet’s Blood',
     'The Titan’s Release', 'The Accountant’s Ledger', 'A Murderous Mind', 'Hunter', 'Obsession',
     'Consumed', 'A Desperate Man', 'A Desperate Nation', 'A Desperate World', 'Dark Pursuits',
-    'A Friend of the Dead', 'A Friend of a Friend', 'A Friend to Fear',
+    'A Friend of the Dead', 'A Friend of a Friend', 'A Friend to Fear', 'A Friend in Debt',
+    'B0H34V3JH9', 'B0H6X8S6NF', '26', 'images/friend-in-debt.jpg',
+    'images/hcu-boxed-1-9.jpg', 'https://www.readdanielscott.com/og.png',
     'https://www.amazon.com/Daniel-Scott/e/B0B6QCQ8RV',
     'https://www.readdanielscott.com/'
 ]
@@ -55,6 +57,10 @@ if missing_backmatter_terms:
 for filename, text in [('styles.css', css), ('script.js', js)]:
     if not text.strip():
         raise SystemExit(f'{filename} is empty')
+
+for asset in ['images/friend-in-debt.jpg', 'images/hcu-boxed-1-9.jpg', 'og.png']:
+    if not (root / asset).exists():
+        raise SystemExit(f'Missing redesign asset: {asset}')
 
 for page in pages:
     text = page.read_text()
