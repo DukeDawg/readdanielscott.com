@@ -24,7 +24,7 @@ The four reader entry lanes are:
 1. **Heinous Crimes Unit** — 9-book FBI procedural / serial-killer series plus complete Books 1–9 boxed set.
 2. **A Murderous Mind** — 3-book psychological thriller trilogy.
 3. **A Desperate Man** — 3-book FBI manhunt trilogy.
-4. **Dark Pursuits** — 4-book supernatural thriller series, now including *A Friend in Debt*.
+4. **Dark Pursuits** — 5-book supernatural thriller series, now including *A Friend of the Family*.
 
 The page includes Amazon purchase/follow links, verified current catalog counts, full reading orders, the new 1–9 HCU boxed set, MailerLite reader signup, working contact form, SEO/canonical metadata, a bespoke Open Graph card, schema.org Person JSON-LD, and responsive mobile navigation.
 

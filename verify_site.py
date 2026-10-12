@@ -14,8 +14,9 @@ required_terms = [
     'The Titan’s Release', 'The Accountant’s Ledger', 'A Murderous Mind', 'Hunter', 'Obsession',
     'Consumed', 'A Desperate Man', 'A Desperate Nation', 'A Desperate World', 'Dark Pursuits',
     'A Friend of the Dead', 'A Friend of a Friend', 'A Friend to Fear', 'A Friend in Debt',
-    'B0H34V3JH9', 'B0H6X8S6NF', '26', 'images/friend-in-debt.jpg',
-    'images/hcu-boxed-1-9.jpg', 'https://www.readdanielscott.com/og.png',
+    'A Friend of the Family', 'B0H34V3JH9', 'B0HDHFTCLY', 'B0H6X8S6NF', 'B0CV4NN2B2',
+    'images/friend-of-the-family.webp', 'images/hcu-boxed-1-9.webp',
+    'favicon.svg', 'https://www.readdanielscott.com/og.png',
     'https://www.amazon.com/Daniel-Scott/e/B0B6QCQ8RV',
     'https://www.readdanielscott.com/'
 ]
@@ -47,8 +48,8 @@ backmatter_terms = [
     'mlb2-41467195',
     'ml_webform_success_41467195',
     'data-mailerlite-success="ml_webform_success_41467195"',
-    '../script.js?v=backmatter-signup',
-    '../styles.css?v=backmatter-signup',
+    '../script.js?v=20261012',
+    '../styles.css?v=20261012',
 ]
 missing_backmatter_terms = [term for term in backmatter_terms if term not in backmatter]
 if missing_backmatter_terms:
@@ -58,7 +59,8 @@ for filename, text in [('styles.css', css), ('script.js', js)]:
     if not text.strip():
         raise SystemExit(f'{filename} is empty')
 
-for asset in ['images/friend-in-debt.jpg', 'images/hcu-boxed-1-9.jpg', 'og.png']:
+for asset in ['images/friend-of-the-family.webp', 'images/hcu-boxed-1-9.webp', 'og.png',
+              'favicon.ico', 'favicon.svg', 'apple-touch-icon.png']:
     if not (root / asset).exists():
         raise SystemExit(f'Missing redesign asset: {asset}')
 
